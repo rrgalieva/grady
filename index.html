@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Грейди — навигатор развития&nbsp;для дизайнеров</title>
+<title>Грейди — навигатор развития для&nbsp;дизайнеров</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
@@ -122,7 +122,7 @@ a{text-decoration:none}
 .white{
   background:#fff;
   border-radius:70px 70px 0 0;
-  margin-top:-70px;
+  margin-top:-140px;
   position:relative;z-index:3;
   padding:100px 38px 48px;
 }
@@ -642,6 +642,11 @@ a{text-decoration:none}
     transform:scale(1.056) !important;
     transform-origin:right bottom !important;
   }
+  /* Картинка на хиро больше и уходит за шторку */
+  .hero-img-wrap{
+    width:65% !important;
+    height:130% !important;
+  }
 }
 
 /* ── 1400px — масштабирование шрифтов ────────────────────────── */
@@ -730,10 +735,10 @@ a{text-decoration:none}
     flex:none;
   }
   .hero-title{
-    font-size:clamp(34px,11.57vw,50px) !important;
+    font-size:clamp(28px,9vw,42px) !important;
     font-weight:600 !important;
     line-height:.85 !important;
-    letter-spacing:-2.5px !important;
+    letter-spacing:-2px !important;
     color:#3a3a3a !important;
     width:100%;
   }
@@ -1242,7 +1247,7 @@ a{text-decoration:none}
 
   /* 3. Шторка — вернуть с отрицательным отступом */
   .white{
-    margin-top:-30px !important;
+    margin-top:-39px !important;
     position:relative;
     z-index:3;
   }
@@ -1299,6 +1304,59 @@ a{text-decoration:none}
     font-size:16px !important;
     max-width:100% !important;
     line-height:1.3 !important;
+  }
+}
+
+
+/* ═══ МОБИЛЬНЫЕ ПОЛЯ — финальный фикс по Figma ═══════════════
+   Фрейм 432px: контент 372px, поля по 30px с каждой стороны
+   Карточки: p-36px, Whom: p-19px, CTA: p-27.6px
+══════════════════════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* Белая секция: только вертикальные отступы, горизонталь = 0 */
+  .white{
+    padding-left:0 !important;
+    padding-right:0 !important;
+    padding-top:53px !important;
+    padding-bottom:48px !important;
+  }
+
+  /* Основной контейнер: 372px по центру = 30px поля на 432px */
+  .wrap{
+    width:calc(100% - 60px) !important;
+    max-width:372px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding:0 !important;
+  }
+
+  /* Карточки О продукте: p-36px по Figma */
+  .a-card{
+    padding:36px !important;
+  }
+
+  /* Bento карточки: p-36px по Figma */
+  .bc{
+    padding:36px !important;
+  }
+
+  /* Whom карточки: p-19px по Figma */
+  .wcard{
+    padding:19px !important;
+  }
+
+  /* CTA: p-27.6px по Figma */
+  .cta{
+    padding:27.6px !important;
+  }
+
+  /* Whom grid: без внешних отступов, scroll внутри wrap */
+  .whom-grid{
+    width:calc(100% + 60px) !important;
+    margin-left:-30px !important;
+    padding-left:30px !important;
+    padding-right:30px !important;
   }
 }
 
@@ -1364,8 +1422,8 @@ a{text-decoration:none}
 
   <!-- контент -->
   <div class="hero-content">
-    <h1 class="hero-title">Пойми свой уровень&nbsp;и расти&nbsp;как дизайнер&nbsp;без хаоса</h1>
-    <p class="hero-sub">Грейди показывает,&nbsp;где&nbsp;ты сейчас&nbsp;и&nbsp;что качать дальше<br>с помощью коротких уроков&nbsp;и заданий</p>
+    <h1 class="hero-title">Пойми свой уровень и&nbsp;расти как&nbsp;дизайнер без&nbsp;хаоса</h1>
+    <p class="hero-sub">Грейди показывает,&nbsp;где ты&nbsp;сейчас&nbsp;и что&nbsp;качать дальше<br>с помощью коротких уроков и&nbsp;заданий</p>
     <a href="#quiz-block" class="btn" onclick="event.preventDefault();scrollToQuiz()">Узнать уровень</a>
   </div>
 
@@ -1381,20 +1439,20 @@ a{text-decoration:none}
   <div class="s-block rv">
     <div class="s-head">
       <p class="s-label">О продукте</p>
-      <h2 class="s-title">Грейди —&nbsp;это навигатор развития&nbsp;для дизайнеров</h2>
+      <h2 class="s-title">Грейди — это навигатор развития для&nbsp;дизайнеров</h2>
     </div>
     <div class="about-grid">
       <!-- Карточка Обычно -->
       <div class="a-card rv">
         <p class="a-title">Обычно</p>
-        <p class="a-body">Обычно развитие выглядит&nbsp;так: куча курсов, сохраненные посты, немного практики —&nbsp;и ощущение,&nbsp;что ничего&nbsp;не складывается</p>
+        <p class="a-body">Обычно развитие выглядит так: куча курсов, сохраненные посты, немного практики — и ощущение, что&nbsp;ничего не&nbsp;складывается</p>
         <div class="a-card-img1">
           <img src="./card-obychno.png" alt="Обычно">
         </div>
       </div>
       <!-- Карточка В Грейди -->
       <div class="a-card rv d1" style="background:url('./card-greydi-bg.png') center/cover no-repeat;">        <p class="a-title" style="color:#393939;position:relative;z-index:2">В Грейди</p>
-        <p class="a-body" style="color:#393939;position:relative;z-index:2">Грейди собирает&nbsp;это&nbsp;в систему: показывает уровень, даёт карту навыков&nbsp;и превращает развитие&nbsp;в понятные шаги</p>
+        <p class="a-body" style="color:#393939;position:relative;z-index:2">Грейди собирает&nbsp;это в&nbsp;систему: показывает уровень, даёт карту навыков и&nbsp;превращает развитие в&nbsp;понятные шаги</p>
         <div class="a-card-img2">
           <img src="./card-greydi.png" alt="В Грейди">
         </div>
@@ -1406,8 +1464,8 @@ a{text-decoration:none}
   <div class="how rv">
     <div class="how-head">
       <div class="s-head">
-        <p class="s-label">Как&nbsp;это работает</p>
-        <h2 class="s-title">У&nbsp;нас есть&nbsp;все,&nbsp;что нужно, чтобы рост стал понятным</h2>
+        <p class="s-label">Как это&nbsp;работает</p>
+        <h2 class="s-title">У нас&nbsp;есть все, что&nbsp;нужно, чтобы рост стал понятным</h2>
       </div>
       <a href="#quiz-block" class="btn" onclick="event.preventDefault();scrollToQuiz()">Узнать свой уровень</a>
     </div>
@@ -1430,7 +1488,7 @@ a{text-decoration:none}
         <!-- Практики -->
         <div class="bc rv d1">
           <p class="bc-title">Практики</p>
-          <p class="bc-sub">Делаешь короткие<br>задания&nbsp;с результатом</p>
+          <p class="bc-sub">Делаешь короткие<br>задания с&nbsp;результатом</p>
           <img class="bc-desk bento-img" src="./bento-2.png" alt="Практики"
             style="position:absolute;right:0;bottom:0;pointer-events:none;z-index:1;display:block;transform:scale(0.88);transform-origin:right bottom;">
           <!-- mobile: center+46px bottom:-0px h:321px w:404px -->
@@ -1445,7 +1503,7 @@ a{text-decoration:none}
         <!-- Рекомендации -->
         <div class="bc rv">
           <p class="bc-title">Рекомендации<br>по развитию</p>
-          <p class="bc-sub">Видишь&nbsp;что качать дальше</p>
+          <p class="bc-sub">Видишь что&nbsp;качать дальше</p>
           <img class="bc-desk bento-img" src="./bento-3.png" alt="Рекомендации"
             style="position:absolute;right:0;bottom:0;pointer-events:none;z-index:1;display:block;transform:scale(0.88);transform-origin:right bottom;">
           <!-- mobile: center-44px bottom:0 h:240px w:448px -->
@@ -1456,7 +1514,7 @@ a{text-decoration:none}
         <!-- Карта навыков -->
         <div class="bc rv d1">
           <p class="bc-title">Карта навыков</p>
-          <p class="bc-sub">Видишь,&nbsp;что&nbsp;у тебя проседает</p>
+          <p class="bc-sub">Видишь,&nbsp;что у&nbsp;тебя проседает</p>
           <img class="bc-desk bento-img" src="./bento-4.png" alt="Карта навыков"
             style="position:absolute;right:0;bottom:0;pointer-events:none;z-index:1;display:block;transform:scale(0.88);transform-origin:right bottom;">
           <!-- mobile: center-26px bottom:0 h:270px w:424px -->
@@ -1472,7 +1530,7 @@ a{text-decoration:none}
   <div class="whom rv">
     <div class="s-head">
       <p class="s-label">Для кого</p>
-      <h2 class="s-title">Если&nbsp;это&nbsp;про тебя —<br>тебе&nbsp;к&nbsp;нам</h2>
+      <h2 class="s-title">Если&nbsp;это про&nbsp;тебя —<br>тебе&nbsp;к нам</h2>
     </div>
     <div class="whom-grid">
       <!-- whom cards have mobile-specific Figma backgrounds via CSS -->
@@ -1501,10 +1559,10 @@ a{text-decoration:none}
 
     <!-- Экран 0: Интро -->
     <div class="quiz-screen active" id="screen-0">
-      <p class="cta-label">Тест&nbsp;на уровень</p>
+      <p class="cta-label">Тест на&nbsp;уровень</p>
       <div class="cta-block">
-        <h2 class="cta-title">Узнай свой уровень&nbsp;и получи свой первый&nbsp;шаг&nbsp;к росту</h2>
-        <p class="cta-sub">Пройди короткий квиз — поймёшь,&nbsp;где&nbsp;ты сейчас&nbsp;и&nbsp;что мешает расти дальше.&nbsp;В конце сможешь получить бесплатный урок</p>
+        <h2 class="cta-title">Узнай свой уровень и&nbsp;получи свой первый&nbsp;шаг к&nbsp;росту</h2>
+        <p class="cta-sub">Пройди короткий квиз — поймёшь,&nbsp;где ты&nbsp;сейчас&nbsp;и что&nbsp;мешает расти дальше. В&nbsp;конце сможешь получить бесплатный урок</p>
       </div>
       <button class="btn btn-dark" onclick="startQuiz()">Начать</button>
     </div>
@@ -1512,8 +1570,8 @@ a{text-decoration:none}
     <!-- Экран 1 -->
     <div class="quiz-screen" id="screen-1">
       <div class="quiz-progress"><div class="quiz-progress-bar" id="bar-1" style="width:12.5%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
-      <h2 class="quiz-question">Как&nbsp;ты сам(а) сейчас<br><span>оц</span>ениваешь свой уровень?</h2>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
+      <h2 class="quiz-question">Как ты&nbsp;сам(а) сейчас<br><span>оц</span>ениваешь свой уровень?</h2>
       <div class="quiz-options">
         <button class="quiz-opt" onclick="selectOpt(this,2)">Я только начинаю</button>
         <button class="quiz-opt" onclick="selectOpt(this,2)">Скорее уверенный джун</button>
@@ -1525,77 +1583,77 @@ a{text-decoration:none}
     <!-- Экран 2 -->
     <div class="quiz-screen" id="screen-2">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:25%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
-      <h2 class="quiz-question">Когда&nbsp;ты делаешь макет,<br><span>что</span> происходит чаще всего?</h2>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
+      <h2 class="quiz-question">Когда ты&nbsp;делаешь макет,<br><span>что</span> происходит чаще всего?</h2>
       <div class="quiz-options">
-        <button class="quiz-opt" onclick="selectOpt(this,3)">Начинаю&nbsp;без плана&nbsp;и дальше&nbsp;как пойдёт</button>
-        <button class="quiz-opt" onclick="selectOpt(this,3)">Примерно понимаю направление,&nbsp;но много чиню&nbsp;по ходу</button>
+        <button class="quiz-opt" onclick="selectOpt(this,3)">Начинаю без&nbsp;плана и&nbsp;дальше как&nbsp;пойдёт</button>
+        <button class="quiz-opt" onclick="selectOpt(this,3)">Примерно понимаю направление, но&nbsp;много чиню по&nbsp;ходу</button>
         <button class="quiz-opt" onclick="selectOpt(this,3)">Обычно сразу вижу структуру</button>
-        <button class="quiz-opt" onclick="selectOpt(this,3)">Сначала думаю&nbsp;про логику, потом собираю визуал</button>
+        <button class="quiz-opt" onclick="selectOpt(this,3)">Сначала думаю про&nbsp;логику, потом собираю визуал</button>
       </div>
     </div>
 
     <!-- Экран 3 -->
     <div class="quiz-screen" id="screen-3">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:37.5%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
       <h2 class="quiz-question">Что чаще всего ломает<br>твои работы?</h2>
       <div class="quiz-options">
-        <button class="quiz-opt" onclick="selectOpt(this,4)">"Что-то&nbsp;не&nbsp;так",&nbsp;но&nbsp;не понимаю&nbsp;что именно</button>
-        <button class="quiz-opt" onclick="selectOpt(this,4)">Визуальный&nbsp;шум</button>
+        <button class="quiz-opt" onclick="selectOpt(this,4)">"Что-то&nbsp;не так",&nbsp;но не&nbsp;понимаю что&nbsp;именно</button>
+        <button class="quiz-opt" onclick="selectOpt(this,4)">Визуальный шум</button>
         <button class="quiz-opt" onclick="selectOpt(this,4)">Слабая иерархия</button>
-        <button class="quiz-opt" onclick="selectOpt(this,4)">В целом&nbsp;всё&nbsp;ок,&nbsp;но хочется собраннее&nbsp;и сильнее</button>
+        <button class="quiz-opt" onclick="selectOpt(this,4)">В целом&nbsp;всё ок, но&nbsp;хочется собраннее и&nbsp;сильнее</button>
       </div>
     </div>
 
     <!-- Экран 4 -->
     <div class="quiz-screen" id="screen-4">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:50%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
-      <h2 class="quiz-question">Как&nbsp;ты работаешь<br>с референсами?</h2>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
+      <h2 class="quiz-question">Как ты&nbsp;работаешь<br>с референсами?</h2>
       <div class="quiz-options">
         <button class="quiz-opt" onclick="selectOpt(this,5)">Редко использую</button>
-        <button class="quiz-opt" onclick="selectOpt(this,5)">Скорее копирую&nbsp;то,&nbsp;что понравилось</button>
-        <button class="quiz-opt" onclick="selectOpt(this,5)">Разбираю, почему&nbsp;это работает,&nbsp;и адаптирую</button>
-        <button class="quiz-opt" onclick="selectOpt(this,5)">Собираю&nbsp;из рефов собственную систему решений</button>
+        <button class="quiz-opt" onclick="selectOpt(this,5)">Скорее копирую то, что&nbsp;понравилось</button>
+        <button class="quiz-opt" onclick="selectOpt(this,5)">Разбираю, почему это&nbsp;работает, и&nbsp;адаптирую</button>
+        <button class="quiz-opt" onclick="selectOpt(this,5)">Собираю из&nbsp;рефов собственную систему решений</button>
       </div>
     </div>
 
     <!-- Экран 5 -->
     <div class="quiz-screen" id="screen-5">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:62.5%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
-      <h2 class="quiz-question">Как&nbsp;у тебя обычно<br>с типографикой?</h2>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
+      <h2 class="quiz-question">Как у&nbsp;тебя обычно<br>с типографикой?</h2>
       <div class="quiz-options">
         <button class="quiz-opt" onclick="selectOpt(this,6)">Часто ставлю шрифты интуитивно</button>
-        <button class="quiz-opt" onclick="selectOpt(this,6)">Базу понимаю,&nbsp;но&nbsp;не всегда уверенно</button>
-        <button class="quiz-opt" onclick="selectOpt(this,6)">Обычно хорошо чувствую иерархию&nbsp;и ритм</button>
-        <button class="quiz-opt" onclick="selectOpt(this,6)">Типографика&nbsp;у меня одна&nbsp;из сильных сторон</button>
+        <button class="quiz-opt" onclick="selectOpt(this,6)">Базу понимаю,&nbsp;но не&nbsp;всегда уверенно</button>
+        <button class="quiz-opt" onclick="selectOpt(this,6)">Обычно хорошо чувствую иерархию и&nbsp;ритм</button>
+        <button class="quiz-opt" onclick="selectOpt(this,6)">Типографика у&nbsp;меня одна из&nbsp;сильных сторон</button>
       </div>
     </div>
 
     <!-- Экран 6 -->
     <div class="quiz-screen" id="screen-6">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:75%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
-      <h2 class="quiz-question">Когда нужно улучшить экран<br><span>или</span> макет&nbsp;ты чаще всего…</h2>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
+      <h2 class="quiz-question">Когда нужно улучшить экран<br><span>или</span> макет ты&nbsp;чаще всего…</h2>
       <div class="quiz-options">
-        <button class="quiz-opt" onclick="selectOpt(this,7)">Просто двигаю&nbsp;всё, пока&nbsp;не станет лучше</button>
-        <button class="quiz-opt" onclick="selectOpt(this,7)">Пытаюсь сделать поаккуратнее&nbsp;и покрасивее</button>
-        <button class="quiz-opt" onclick="selectOpt(this,7)">Сначала&nbsp;ищу,&nbsp;в&nbsp;чём проблема, потом исправляю</button>
-        <button class="quiz-opt" onclick="selectOpt(this,7)">Смотрю&nbsp;как&nbsp;на систему: логика, ритм, акценты</button>
+        <button class="quiz-opt" onclick="selectOpt(this,7)">Просто двигаю всё, пока не&nbsp;станет лучше</button>
+        <button class="quiz-opt" onclick="selectOpt(this,7)">Пытаюсь сделать поаккуратнее и&nbsp;покрасивее</button>
+        <button class="quiz-opt" onclick="selectOpt(this,7)">Сначала ищу,&nbsp;в чём&nbsp;проблема, потом исправляю</button>
+        <button class="quiz-opt" onclick="selectOpt(this,7)">Смотрю&nbsp;как на&nbsp;систему: логика, ритм, акценты</button>
       </div>
     </div>
 
     <!-- Экран 7 -->
     <div class="quiz-screen" id="screen-7">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:87.5%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
       <h2 class="quiz-question">Что тебе сейчас мешает<br>расти сильнее всего?</h2>
       <div class="quiz-options">
         <button class="quiz-opt" onclick="selectOpt(this,8)">Не понимаю свой уровень</button>
-        <button class="quiz-opt" onclick="selectOpt(this,8)">Нет системы,&nbsp;всё слишком хаотично</button>
-        <button class="quiz-opt" onclick="selectOpt(this,8)">Нет времени&nbsp;на длинную учёбу</button>
+        <button class="quiz-opt" onclick="selectOpt(this,8)">Нет системы, всё&nbsp;слишком хаотично</button>
+        <button class="quiz-opt" onclick="selectOpt(this,8)">Нет времени на&nbsp;длинную учёбу</button>
         <button class="quiz-opt" onclick="selectOpt(this,8)">Не понимаю, какие навыки реально тянут меня вверх</button>
       </div>
     </div>
@@ -1603,13 +1661,13 @@ a{text-decoration:none}
     <!-- Экран 8 -->
     <div class="quiz-screen" id="screen-8">
       <div class="quiz-progress"><div class="quiz-progress-bar" style="width:100%"></div></div>
-      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где&nbsp;ты сейчас</p>
+      <p class="quiz-hint">Короткий квиз, чтобы понять,&nbsp;где ты&nbsp;сейчас</p>
       <h2 class="quiz-question">Что тебе сейчас<br>ближе всего?</h2>
       <div class="quiz-options">
-        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу понять базу&nbsp;и собрать фундамент</button>
-        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу больше системности&nbsp;и уверенности</button>
+        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу понять базу и&nbsp;собрать фундамент</button>
+        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу больше системности и&nbsp;уверенности</button>
         <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу, чтобы работы выглядели сильнее</button>
-        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу выйти&nbsp;на новый уровень&nbsp;и делать точнее</button>
+        <button class="quiz-opt" onclick="selectOpt(this,'result')">Хочу выйти на&nbsp;новый уровень и&nbsp;делать точнее</button>
       </div>
     </div>
 
@@ -1618,10 +1676,10 @@ a{text-decoration:none}
       <p class="quiz-hint" style="color:rgba(45,45,45,0.45)">Результат</p>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:760px;">
         <h2 class="quiz-question" style="font-size:clamp(40px,4vw,72px);letter-spacing:-3px;">
-         &nbsp;Ты сейчас:<br><span id="res-level" style="color:#333!important"></span>
+          Ты сейчас:<br><span id="res-level" style="color:#333!important"></span>
         </h2>
         <p class="quiz-hint" style="color:rgba(45,45,45,0.55);font-size:17px;max-width:600px;white-space:normal;text-align:center;">
-         &nbsp;Мы&nbsp;не пытаемся измерить тебя линейкой.&nbsp;Это быстрый срез,<br>чтобы понять, куда полезнее смотреть прямо сейчас
+         &nbsp;Мы не&nbsp;пытаемся измерить тебя линейкой. Это&nbsp;быстрый срез,<br>чтобы понять, куда полезнее смотреть прямо сейчас
         </p>
       </div>
       <!-- Карточка 1: точка роста -->
@@ -1633,7 +1691,7 @@ a{text-decoration:none}
       <!-- Карточки 2+3 -->
       <div style="display:grid;grid-template-columns:1fr auto;gap:16px;width:100%;max-width:600px;">
         <div class="res-card">
-          <p class="res-card-label">Твой следующий&nbsp;шаг</p>
+          <p class="res-card-label">Твой следующий шаг</p>
           <p class="res-card-body" id="res-step"></p>
         </div>
         <div class="res-card" style="min-width:160px;display:flex;flex-direction:column;gap:8px;">
@@ -1644,7 +1702,7 @@ a{text-decoration:none}
       <!-- Кнопки -->
       <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
         <button class="btn btn-dark" onclick="goTo('donate')" style="font-size:20px;padding:18px 28px;">Получить бесплатный урок</button>
-        <button class="btn" style="background:rgba(0,0,0,0.07);color:#2d2d2d;font-size:20px;padding:18px 28px;" onclick="restartQuiz()">Пройти&nbsp;ещё&nbsp;раз</button>
+        <button class="btn" style="background:rgba(0,0,0,0.07);color:#2d2d2d;font-size:20px;padding:18px 28px;" onclick="restartQuiz()">Пройти&nbsp;ещё раз</button>
       </div>
     </div>
 
@@ -1654,11 +1712,11 @@ a{text-decoration:none}
         Поддержи проект<br>и забери первый урок
       </h2>
       <p class="quiz-hint" style="color:rgba(45,45,45,0.55);font-size:18px;white-space:normal;max-width:620px;text-align:center;">
-        Грейди — студенческий проект&nbsp;про развитие дизайнеров. Донат помогает развивать продукт,&nbsp;а тебе&nbsp;мы отправим бесплатный урок&nbsp;по твоей зоне роста: <span id="donate-topic"></span>
+        Грейди — студенческий проект про&nbsp;развитие дизайнеров. Донат помогает развивать продукт, а&nbsp;тебе мы&nbsp;отправим бесплатный урок по&nbsp;твоей зоне роста: <span id="donate-topic"></span>
       </p>
       <!-- Карточка -->
       <div class="res-card" style="width:100%;max-width:560px;padding:18px 24px;">
-        <p class="res-card-label">Что&nbsp;ты получишь</p>
+        <p class="res-card-label">Что ты&nbsp;получишь</p>
         <p class="res-card-title" style="font-size:26px;font-weight:600;color:#2d2d2d;">Урок + короткую практику</p>
       </div>
       <!-- Выбор суммы -->
@@ -1680,23 +1738,23 @@ a{text-decoration:none}
           onblur="this.style.borderColor='rgba(0,0,0,0.10)'">
       </div>
       <button class="btn btn-dark" id="donate-btn" onclick="submitDonate()" style="font-size:20px;padding:18px 32px;">
-        Задонатить 50 ₽&nbsp;и получить урок
+        Задонатить 50 ₽ и получить урок
       </button>
     </div>
 
     <!-- Экран спасибо -->
     <div class="quiz-screen" id="screen-thanks">
       <h2 class="quiz-question" style="font-size:clamp(40px,4vw,68px);letter-spacing:-2.5px;">
-        Спасибо!<br>Урок почти&nbsp;у тебя
+        Спасибо!<br>Урок почти у&nbsp;тебя
       </h2>
       <p class="quiz-hint" style="color:rgba(45,45,45,0.55);font-size:18px;white-space:normal;max-width:560px;text-align:center;">
-       &nbsp;Мы отправим материал туда, куда&nbsp;ты указал(а).<br>А пока можешь сохранить свой фокус: <span id="thanks-topic"></span>
+        Мы отправим материал туда, куда ты&nbsp;указал(а).<br>А пока можешь сохранить свой фокус: <span id="thanks-topic"></span>
       </p>
       <div style="display:flex;gap:12px;justify-content:center;">
         <a id="lesson-link" href="#" target="_blank" class="btn btn-dark" style="font-size:20px;padding:18px 32px;">
           Скачать урок
         </a>
-        <button class="btn" style="background:rgba(0,0,0,0.07);color:#2d2d2d;font-size:20px;padding:18px 32px;" onclick="restartQuiz()">Пройти квиз&nbsp;еще&nbsp;раз</button>
+        <button class="btn" style="background:rgba(0,0,0,0.07);color:#2d2d2d;font-size:20px;padding:18px 32px;" onclick="restartQuiz()">Пройти квиз&nbsp;еще раз</button>
       </div>
     </div>
 
@@ -1708,9 +1766,9 @@ a{text-decoration:none}
       <div class="f-logo">
         <img src="./Logo.png" alt="Грейди">
       </div>
-      <p class="f-txt">Если есть вопросы, идеи&nbsp;или&nbsp;вы хотите принять участие&nbsp;в раннем доступе — напишите&nbsp;нам info@grady.com</p>
+      <p class="f-txt">Если есть вопросы, идеи&nbsp;или вы&nbsp;хотите принять участие в&nbsp;раннем доступе — напишите нам info@grady.com</p>
     </div>
-    <p class="f-copy">© 2026 Грейди.&nbsp;Все права защищены</p>
+    <p class="f-copy">© 2026 Грейди. Все&nbsp;права защищены</p>
   </footer>
 
 </div>
