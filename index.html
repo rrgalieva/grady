@@ -67,7 +67,7 @@ a{text-decoration:none}
 /* ─── HERO ──────────────────────────────────────────────────── */
 .hero{
   position:relative;
-  height:min(90vh, 900px);
+  height:min(96vh, 980px);
   min-height:700px;
   overflow:hidden;
   background:url('./first-bg.png') center/cover no-repeat;
@@ -122,7 +122,7 @@ a{text-decoration:none}
 .white{
   background:#fff;
   border-radius:70px 70px 0 0;
-  margin-top:-140px;
+  margin-top:-20px;
   position:relative;z-index:3;
   padding:100px 38px 48px;
 }
@@ -671,7 +671,37 @@ a{text-decoration:none}
 }
 
 /* ── 768px — мобильный ───────────────────────────────────────── */
+
+@media(max-width:480px){
+  .hero-title{font-size:clamp(32px,10vw,44px)}
+  .s-title{font-size:clamp(28px,9vw,40px)}
+  .cta-title{font-size:clamp(28px,9vw,40px)}
+  .quiz-question{font-size:clamp(22px,8vw,34px)}
+  .white{padding:40px 14px 32px}
+  .bc,.a-card{padding:20px}
+  .a-title,.bc-title{font-size:28px}
+  .nav-outer{padding:10px 10px 0}
+}
+
+
+/* ═══ MOBILE FIXES (max-width:768px) ══════════════════════════ */
+
+
+
+/* ═══ MOBILE FIXES v2 (max-width:768px) ══════════════════════ */
+
+
+
+/* ═══ МОБИЛЬНЫЕ ПОЛЯ — финальный фикс по Figma ═══════════════
+   Фрейм 432px: контент 372px, поля по 30px с каждой стороны
+   Карточки: p-36px, Whom: p-19px, CTA: p-27.6px
+══════════════════════════════════════════════════════════════ */
+
+
+
+
 @media(max-width:768px){
+
 
   /* ═══════════════════════════════════════════════════════════
      МОБИЛЬНАЯ ВЕРСИЯ — точно по Figma 432px frame
@@ -1072,292 +1102,46 @@ a{text-decoration:none}
     padding-top:24px;
   }
 
-}
-@media(max-width:480px){
-  .hero-title{font-size:clamp(32px,10vw,44px)}
-  .s-title{font-size:clamp(28px,9vw,40px)}
-  .cta-title{font-size:clamp(28px,9vw,40px)}
-  .quiz-question{font-size:clamp(22px,8vw,34px)}
-  .white{padding:40px 14px 32px}
-  .bc,.a-card{padding:20px}
-  .a-title,.bc-title{font-size:28px}
-  .nav-outer{padding:10px 10px 0}
+
 }
 
-
-/* ═══ MOBILE FIXES (max-width:768px) ══════════════════════════ */
+/* ═══ ФИНАЛЬНЫЙ ФИКС ПОЛЕЙ ══════════════════════════════════
+   Один авторитетный блок — никаких конфликтов
+   Figma 432px: контент 372px, поля 30px
+═══════════════════════════════════════════════════════════ */
 @media(max-width:768px){
 
-  /* ── 1. ГЕРОЙ: картинка внизу по центру ─────────────────── */
-  .hero-mb-img{
-    display:block !important;
-    position:relative !important;
-    bottom:auto !important;
-    left:auto !important;
-    top:auto !important;
-    transform:none !important;
-    width:80% !important;
-    max-width:320px !important;
-    height:auto !important;
-    margin:0 auto !important;
-    object-fit:contain !important;
-    object-position:bottom center !important;
-    pointer-events:none;z-index:1;
-  }
-
-  /* ── 2. РАВНОМЕРНЫЕ ОТСТУПЫ ──────────────────────────────── */
-  /* Базовый gap = 24px внутри, 60px между секциями */
-  :root{--mob-gap:24px;--mob-section:60px}
-  .wrap{gap:var(--mob-section)}
-  .s-block{gap:var(--mob-gap)}
-  .how{gap:var(--mob-section)}
-  .how-head{gap:var(--mob-gap)}
-  .bento{gap:var(--mob-gap)}
-  .brow{gap:var(--mob-gap)}
-  .whom{gap:var(--mob-gap)}
-  .s-head{gap:var(--mob-gap)}
-  .about-grid{gap:var(--mob-gap);height:auto}
-  .cta-in{gap:var(--mob-gap)}
-  .cta-block{gap:16px}
-  .quiz-screen{gap:var(--mob-gap)}
-
-  /* ── 3. КАРТОЧКИ ОБЫЧНО/В ГРЕЙДИ: высота по контенту ───── */
-  .about-grid{display:flex;flex-direction:column}
-  .a-card{
-    height:auto !important;
-    min-height:unset !important;
-    padding:20px !important;
-    flex:none;
-  }
-  /* текст занимает ровно столько сколько нужно */
-  .a-title{margin-bottom:8px}
-  .a-body{max-width:100%}
-  /* картинки персонажей скрыты */
-  .a-card-img1,.a-card-img2{display:none !important}
-
-  /* ── 4. BENTO ИЗОБРАЖЕНИЯ: меньше + правый нижний угол ──── */
-  .bc-mob{
-    display:block !important;
-    position:absolute !important;
-    right:0 !important;
-    bottom:0 !important;
-    left:auto !important;
-    transform:none !important;
-    width:109% !important;
-    height:auto !important;
-    max-height:102% !important;
-    object-fit:contain !important;
-    object-position:right bottom !important;
-    pointer-events:none;z-index:1;
-  }
-  .bc-desk{display:none !important}
-
-  /* ── 6. CTA→ФУТЕР: уменьшить расстояние ─────────────────── */
-  .footer{margin-top:24px;padding-top:0}
-
-  /* ── 7. КВИЗ: системная верстка ─────────────────────────── */
-  .quiz-screen{
-    width:100% !important;
-    max-width:100% !important;
-    gap:20px !important;
-    padding:0 !important;
-    align-items:center;
-    text-align:center;
-  }
-  .quiz-progress{
-    max-width:280px;
-    align-self:center;
-  }
-  .quiz-hint{
-    font-size:14px;
-    white-space:normal;
-    max-width:280px;
-    text-align:center;
-  }
-  .quiz-question{
-    font-size:clamp(22px,6.5vw,32px);
-    letter-spacing:-1px;
-    line-height:1;
-    max-width:320px;
-    text-align:center;
-  }
-  .quiz-options{
-    width:100%;
-    max-width:320px;
-    gap:10px;
-    align-self:center;
-  }
-  .quiz-opt{
-    font-size:15px;
-    padding:14px 16px;
-    border-radius:14px;
-    text-align:left;
-  }
-  /* кнопки квиза */
-  #screen-0 .btn{align-self:center}
-  #screen-result .btn,
-  #screen-donate .btn,
-  #screen-thanks .btn{width:100%;max-width:320px;justify-content:center}
-  /* Result/donate/thanks экраны */
-  #screen-result,#screen-donate,#screen-thanks{gap:16px;align-items:center}
-  .res-card{max-width:320px;width:100%}
-  .donate-amt{padding:10px 14px;font-size:15px}
-  #donate-contact{font-size:15px;padding:14px 16px}
-  .res-card-title{font-size:20px}
-  .res-score{font-size:30px}
-
-  /* ── 8. КВИЗ: фон не растягивается ──────────────────────── */
-  .cta{
-    height:auto !important;
-    min-height:600px !important;
-    overflow:hidden;
-  }
-  .cta-bg,.cta-bg-layer{
-    position:absolute !important;
-    inset:0 !important;
-    width:100% !important;
-    height:100% !important;
-    object-fit:cover !important;
-    object-position:center !important;
-  }
-}
-
-
-/* ═══ MOBILE FIXES v2 (max-width:768px) ══════════════════════ */
-@media(max-width:768px){
-
-  /* 1. Убираем <br> в hero-sub — текст не скачет */
-  .hero-sub br{ display:none; }
-
-  /* 2. Картинка героя — полная ширина */
-  .hero-mb-img{
-    position:relative !important;
-    display:block !important;
-    width:100% !important;
-    max-width:100% !important;
-    left:auto !important;
-    top:auto !important;
-    transform:none !important;
-    margin:0 !important;
-    object-fit:cover !important;
-    object-position:top center !important;
-    height:auto !important;
-    flex:none;
-  }
-
-  /* 3. Шторка — вернуть с отрицательным отступом */
+  /* Белая секция — только вертикальные отступы */
   .white{
-    margin-top:-39px !important;
-    position:relative;
-    z-index:3;
+    padding:48px 0 40px !important;
   }
 
-  /* 4. Bento картинки +20% от текущих 91%→109% */
-  .bc-mob{
-    width:109% !important;
-    max-height:102% !important;
-  }
-
-  /* 5. whom-grid: не обрезать по краям */
-  .whom-grid{
-    width:100% !important;
-    overflow-x:auto !important;
-    overflow-y:visible !important;
-    -webkit-overflow-scrolling:touch;
-    scroll-snap-type:x mandatory;
-    padding:0 24px !important;
-    margin:0 -24px !important;
-    width:calc(100% + 48px) !important;
-    box-sizing:content-box;
-    /* первая и последняя карточка не обрезаются */
-  }
-  .whom-grid::after{
-    content:'';
-    display:block;
-    flex:none;
-    width:24px;
-    height:1px;
-  }
-  .wcard{
-    scroll-snap-align:center;
-    flex:none;
-    width:80vw !important;
-    min-width:unset !important;
-  }
-
-  /* 6. Квиз: текст не скачет — убираем лишние переносы */
-  .cta-title br{ display:none; }
-  .cta-sub br{ display:none; }
-  .quiz-question br{ display:none; }
-  /* Компактный квиз */
-  .quiz-screen{
-    padding:0 4px !important;
-    gap:16px !important;
-  }
-  .cta-title{
-    font-size:clamp(28px,8vw,38px) !important;
-    line-height:.92 !important;
-    letter-spacing:-1.5px !important;
-    max-width:100% !important;
-  }
-  .cta-sub{
-    font-size:16px !important;
-    max-width:100% !important;
-    line-height:1.3 !important;
-  }
-}
-
-
-/* ═══ МОБИЛЬНЫЕ ПОЛЯ — финальный фикс по Figma ═══════════════
-   Фрейм 432px: контент 372px, поля по 30px с каждой стороны
-   Карточки: p-36px, Whom: p-19px, CTA: p-27.6px
-══════════════════════════════════════════════════════════════ */
-@media(max-width:768px){
-
-  /* Белая секция: только вертикальные отступы, горизонталь = 0 */
-  .white{
-    padding-left:0 !important;
-    padding-right:0 !important;
-    padding-top:53px !important;
-    padding-bottom:48px !important;
-  }
-
-  /* Основной контейнер: 372px по центру = 30px поля на 432px */
+  /* Контент 372px по центру = 30px поля с каждой стороны */
   .wrap{
-    width:calc(100% - 60px) !important;
-    max-width:372px !important;
+    width:calc(100% - 24px) !important;
+    max-width:420px !important;
     margin-left:auto !important;
     margin-right:auto !important;
     padding:0 !important;
+    box-sizing:border-box !important;
   }
 
-  /* Карточки О продукте: p-36px по Figma */
-  .a-card{
-    padding:36px !important;
-  }
+  /* ВСЕ ПОЛЯ = 12px */
+  .a-card{ padding:12px !important; }
+  .bc{ padding:12px !important; }
+  .wcard{ padding:0 !important; }
+  .cta{ padding:12px !important; }
+  .res-card{ padding:12px !important; }
+  .s-head{ padding:0 !important; }
 
-  /* Bento карточки: p-36px по Figma */
-  .bc{
-    padding:36px !important;
-  }
-
-  /* Whom карточки: p-19px по Figma */
-  .wcard{
-    padding:19px !important;
-  }
-
-  /* CTA: p-27.6px по Figma */
-  .cta{
-    padding:27.6px !important;
-  }
-
-  /* Whom grid: без внешних отступов, scroll внутри wrap */
+  /* Whom-grid: горизонтальный скролл без обрезки */
   .whom-grid{
-    width:calc(100% + 60px) !important;
-    margin-left:-30px !important;
-    padding-left:30px !important;
-    padding-right:30px !important;
+    width:calc(100% + 24px) !important;
+    margin-left:-12px !important;
+    padding:0 12px !important;
+    box-sizing:content-box !important;
   }
+
 }
 
 </style>
