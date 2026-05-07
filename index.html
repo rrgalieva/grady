@@ -70,7 +70,9 @@ a{text-decoration:none}
   height:min(96vh, 980px);
   min-height:700px;
   overflow:hidden;
-  background:url('./first-bg.png') center/cover no-repeat;
+  /* фон +20% — не обрубается снизу */
+  background:url('./first-bg.png') center/120% auto no-repeat;
+  background-position:center top;
 }
 /* img-версия скрыта на десктопе, нужна только для мобильного переопределения */
 .hero-bg{
@@ -85,7 +87,9 @@ a{text-decoration:none}
 .hero-content{
   position:absolute;
   left:50.656px;
-  top:140px;
+  top:50%;
+  transform:translateY(-50%);
+  margin-top:28px; /* сдвиг ниже навбара */
   width:clamp(480px, 38vw, 700px);
   display:flex;flex-direction:column;align-items:flex-start;gap:32px;
   animation:fu .7s cubic-bezier(.22,1,.36,1) both;
@@ -644,7 +648,7 @@ a{text-decoration:none}
   }
   /* Картинка на хиро больше и уходит за шторку */
   .hero-img-wrap{
-    width:65% !important;
+    width:68% !important;
     height:130% !important;
   }
 }
@@ -754,6 +758,7 @@ a{text-decoration:none}
     left:auto !important;
     top:auto !important;
     transform:none !important;
+    margin-top:0 !important;
     width:auto !important;
     max-width:100% !important;
     align-items:flex-start !important;
@@ -1144,6 +1149,30 @@ a{text-decoration:none}
 
 }
 
+
+/* ═══ СБРОС ДЕСКТОПНЫХ ПРАВОК НА МОБИЛЬНОМ ══════════════════ */
+@media(max-width:768px){
+  /* Сброс центрирования и transform от десктопа */
+  .hero-content{
+    position:relative !important;
+    top:auto !important;
+    transform:none !important;
+    margin-top:0 !important;
+    left:auto !important;
+    padding:88px 24px 24px !important;
+  }
+  /* Сброс background с масштабом 120% */
+  .hero{
+    background:none !important;
+  }
+  .hero-bg{
+    display:block !important;
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;z-index:0;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1199,7 +1228,7 @@ a{text-decoration:none}
   <img class="hero-bg" src="https://www.figma.com/api/mcp/asset/943650ff-a782-44e1-ad42-6a530f250d97" alt="">
 
   <!-- декор: молния (desktop) -->
-  <div class="hero-img-wrap" style="position:absolute;pointer-events:none;right:0;top:0;width:55%;height:110%;z-index:1;">
+  <div class="hero-img-wrap" style="position:absolute;pointer-events:none;right:0;top:0;width:55%;height:120%;z-index:1;">
     <img src="./hero-image.png" alt="Приложение Грейди"
       style="width:100%;height:100%;object-fit:contain;object-position:right top;">
   </div>
